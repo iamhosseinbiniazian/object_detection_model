@@ -1,0 +1,37 @@
+{
+    "model" : {
+        "min_input_size":       288,
+        "max_input_size":       448,
+        "max_box_per_image":    10,
+        "labels":               ["car","cementsilo","cementtruck","loader","person","tank"],
+        "classes_path":               "model_data/aut_classes.txt",
+        "anchors_path":               "model_data/yolo_anchors.txt",
+        "weights_path":               "model_data/yolo_weights.h5",
+        "log_dir":                    "logs/000/"
+    },
+
+    "train": {
+        "train_image_folder":   "/home/colab/workspace/Data/train/JPEGImages/",
+        "train_annot_folder":   "/home/colab/workspace/Data/train/Annotations/",
+        "cache_name":           "YOLOv3_train.pkl",
+
+        "train_times":          8,
+        "batch_size":           16,
+        "learning_rate":        1e-4,
+        "nb_epochs":            20,
+        "warmup_epochs":        3,
+        "ignore_thresh":        0.5,
+        "gpus":                 "0",
+
+        "saved_weights_name":   "YOLOv3.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "/home/colab/workspace/Data/trainvalset/JPEGImages/",
+        "valid_annot_folder":   "/home/colab/workspace/Data/trainvalset/Annotations/",
+        "cache_name":           "YOLOv3_val.pkl",
+
+        "valid_times":          1
+    }
+}
